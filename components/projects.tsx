@@ -44,6 +44,14 @@ export const projectsData = [
         status: "Completed",
         link: "https://github.com/Sha-dos/scouting2024",
         category: "Web"
+    },
+    {
+        title: "Portfolio Website",
+        description: "My personal portfolio website showcasing my projects, skills, and experiences, built with NextJS and shadcn/ui.",
+        technologies: ["NextJS", "Typescript", "Web Development"],
+        status: "Ongoing",
+        link: "https://github.com/Sha-dos/portfolio",
+        category: "Web"
     }
 ];
 

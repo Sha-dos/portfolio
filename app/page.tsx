@@ -56,7 +56,7 @@ const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
 // Projects Section Component
 const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
-  const categories = ["All", "Robotics", "Systems", "Software"];
+  const categories = ["All", ...new Set(projectsData.map(project => project.category))];
 
   const filteredProjects = selectedCategory === "All"
       ? projectsData
