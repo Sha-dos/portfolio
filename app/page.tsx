@@ -1,93 +1,12 @@
 "use client";
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, ExternalLink, Code, Cpu, Database, Zap, Bot, Settings } from 'lucide-react';
-import {ProjectCard, projectsData} from "@/components/projects";
-
-const skillsData = [
-  {
-    name: "Programming Languages",
-    items: ["Rust", "C/C++", "TypeScript", "Python", "Java", "Swift"],
-    icon: <Code className="w-5 h-5" />
-  },
-  {
-    name: "Robotics & Control",
-    items: ["FRC Programming", "PID Control", "Path Planning", "Computer Vision", "Sensors", "Motor Control"],
-    icon: <Bot className="w-5 h-5" />
-  },
-  {
-    name: "Systems & Hardware",
-    items: ["Embedded Systems", "RoboRIO", "ARM Cortex", "Real-Time Systems", "CAN Bus", "IOS"],
-    icon: <Cpu className="w-5 h-5" />
-  },
-  {
-    name: "Software Engineering",
-    items: ["Git", "CI/CD", "React", "Node.js", "WebSockets", "System Design"],
-    icon: <Settings className="w-5 h-5" />
-  },
-];
-
-const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }) => {
-  return (
-      <div className="flex justify-center mb-12">
-        <div className="flex space-x-2 p-1 bg-white/10 rounded-lg backdrop-blur-sm">
-          {categories.map((category) => (
-              <Button
-                  key={category}
-                  variant={selectedCategory === category ? "default" : "ghost"}
-                  size="sm"
-                  onClick={() => onCategoryChange(category)}
-                  className={selectedCategory === category
-                      ? "bg-blue-500 text-white"
-                      : "text-gray-300 hover:text-white hover:bg-white/10"
-                  }
-              >
-                {category}
-              </Button>
-          ))}
-        </div>
-      </div>
-  );
-};
-
-// Projects Section Component
-const ProjectsSection = () => {
-  const [selectedCategory, setSelectedCategory] = React.useState("All");
-  const categories = ["All", ...new Set(projectsData.map(project => project.category))];
-
-  const filteredProjects = selectedCategory === "All"
-      ? projectsData
-      : projectsData.filter(project => project.category === selectedCategory);
-
-  return (
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Projects</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-teal-400 mx-auto rounded-full" />
-            <p className="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">
-              From competitive robotics to systems programming, here are some projects that showcase my journey
-            </p>
-          </div>
-
-          <CategoryFilter
-              categories={categories}
-              selectedCategory={selectedCategory}
-              onCategoryChange={setSelectedCategory}
-          />
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-        </div>
-      </section>
-  );
-};
+import { Github, Linkedin, Mail, Code, Cpu, Database, Zap, Bot, Settings } from 'lucide-react';
+import {ProjectsSection} from "@/components/projects";
+import {AboutSection} from "@/components/about";
 
 const Portfolio = () => {
   return (
@@ -145,80 +64,7 @@ const Portfolio = () => {
         </header>
 
         {/* About Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">About Me</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-teal-400 mx-auto rounded-full" />
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center">
-                      <Bot className="w-6 h-6 mr-3 text-blue-400" />
-                      From Robotics to Systems
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-gray-300">
-                    <p className="leading-relaxed">
-                      My journey into computer systems engineering began with competitive robotics through FIRST Robotics Competition (FRC).
-                      Working with teams to build and program robots in eight-week challenges taught me the importance of reliable,
-                      real-time systems and efficient software design. This experience sparked my passion for systems-level programming
-                      and led me to explore languages like Rust for their performance and safety guarantees.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center">
-                      <Zap className="w-6 h-6 mr-3 text-teal-400" />
-                      What Drives Me
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-gray-300">
-                    <p className="leading-relaxed">
-                      I'm passionate about building robust, performant systems that bridge the gap between software and hardware.
-                      From programming robot control systems, developing embedded applications, or simulating a dice game,
-                      I love solving complex problems where reliability and efficiency are required. My goal is to contribute to the next
-                      generation of intelligent systems and autonomous technologies.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="space-y-8">
-                <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center">
-                      <Database className="w-6 h-6 mr-3 text-blue-400" />
-                      Technical Expertise
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    {skillsData.map((category, index) => (
-                        <div key={index}>
-                          <h4 className="text-blue-300 font-semibold mb-3 flex items-center">
-                            <span className="text-teal-400 mr-2">{category.icon}</span>
-                            {category.name}
-                          </h4>
-                          <div className="flex flex-wrap gap-2">
-                            {category.items.map((skill, skillIndex) => (
-                                <Badge key={skillIndex} variant="secondary" className="bg-blue-500/20 text-blue-200 border-blue-500/30">
-                                  {skill}
-                                </Badge>
-                            ))}
-                          </div>
-                        </div>
-                    ))}
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
+        <AboutSection />
 
         {/* Projects Section */}
         <ProjectsSection />

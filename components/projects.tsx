@@ -3,13 +3,14 @@ import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
 import {ExternalLink} from "lucide-react";
 import React from "react";
+import {Project, ProjectStatus} from "@/lib/types";
 
-export const projectsData = [
+export const projectsData: Project[] = [
     {
         title: "FRCRS - Rust FRC Framework",
         description: "A Rust framework for FIRST Robotics Competition robot programming, providing safe and performant abstractions over WPILib for real-time robot control.",
         technologies: ["Rust", "WPILib", "RoboRIO", "CAN Bus", "Real-Time Systems", "FFI", "Java", "C/C++"],
-        status: "Completed",
+        status: ProjectStatus.Completed,
         link: "https://github.com/Team-2502/frcrs",
         category: "Robotics"
     },
@@ -17,7 +18,7 @@ export const projectsData = [
         title: "RobotCode2025 - FRC Competition Robot",
         description: "Complete robot code for the 2025 FRC season built with Rust, featuring autonomous routines, teleop control, and subsystem management. Not to mention the only robot code for 2025 written in Rust.",
         technologies: ["Rust", "FRCRS", "Autonomous Programming", "PID Control", "State Machines"],
-        status: "Completed",
+        status: ProjectStatus.Completed,
         link: "https://github.com/Team-2502/RobotCode2025",
         category: "Robotics"
     },
@@ -25,7 +26,7 @@ export const projectsData = [
         title: "trajectory-rs - Path Planning Library",
         description: "A Rust library for decoding Choreo trajectory files and providing path planning capabilities for FRC robots.",
         technologies: ["Rust", "Path Planning", "Spline Generation", "Motion Profiling", "Mathematics"],
-        status: "Completed",
+        status: ProjectStatus.Completed,
         link: "https://github.com/Sha-dos/trajectory-rs",
         category: "Robotics"
     },
@@ -33,7 +34,7 @@ export const projectsData = [
         title: "LCR - Left Center Right Simulation",
         description: "A C++ simulation of the Left Center Right dice game, demonstrating object-oriented programming principles and game state management with statistical features.",
         technologies: ["C++", "Object-Oriented Programming", "Game Simulation", "Statistical Analysis"],
-        status: "Completed",
+        status: ProjectStatus.Completed,
         link: "https://github.com/Sha-dos/lcr",
         category: "Software"
     },
@@ -41,7 +42,7 @@ export const projectsData = [
         title: "Scouting 2024 - FRC Scouting App",
         description: "A web-based scouting application for FRC teams, built with NextJS and TypeScript, providing data collection and analysis during competitions.",
         technologies: ["NextJS", "TypeScript", "Web Development", "Firebase"],
-        status: "Completed",
+        status: ProjectStatus.Completed,
         link: "https://github.com/Sha-dos/scouting2024",
         category: "Web"
     },
@@ -49,13 +50,40 @@ export const projectsData = [
         title: "Portfolio Website",
         description: "My personal portfolio website showcasing my projects, skills, and experiences, built with NextJS and shadcn/ui.",
         technologies: ["NextJS", "Typescript", "Web Development"],
-        status: "Ongoing",
+        status: ProjectStatus.InProgress,
         link: "https://github.com/Sha-dos/portfolio",
         category: "Web"
     }
 ];
 
-export const ProjectCard = ({ project }) => {
+const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }: {
+    categories: string[],
+    selectedCategory: string,
+    onCategoryChange:  React.Dispatch<React.SetStateAction<string>>
+}) => {
+    return (
+        <div className="flex justify-center mb-12">
+            <div className="flex space-x-2 p-1 bg-white/10 rounded-lg backdrop-blur-sm">
+                {categories.map((category) => (
+                    <Button
+                        key={category}
+                        variant={selectedCategory === category ? "default" : "ghost"}
+                        size="sm"
+                        onClick={() => onCategoryChange(category)}
+                        className={selectedCategory === category
+                            ? "bg-blue-500 text-white"
+                            : "text-gray-300 hover:text-white hover:bg-white/10"
+                        }
+                    >
+                        {category}
+                    </Button>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export const ProjectCard = ({ project }: { project: Project }) => {
     return (
         <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group flex flex-col h-full">
             <CardHeader className="flex-1">
@@ -104,5 +132,40 @@ export const ProjectCard = ({ project }) => {
                 </Button>
             </CardContent>
         </Card>
+    );
+};
+
+export const ProjectsSection = () => {
+    const [selectedCategory, setSelectedCategory] = React.useState("All");
+    const categories = ["All", ...new Set(projectsData.map(project => project.category))];
+
+    const filteredProjects = selectedCategory === "All"
+        ? projectsData
+        : projectsData.filter(project => project.category === selectedCategory);
+
+    return (
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Projects</h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-teal-400 mx-auto rounded-full" />
+                    <p className="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">
+                        From competitive robotics to systems programming, here are some projects that showcase my journey
+                    </p>
+                </div>
+
+                <CategoryFilter
+                    categories={categories}
+                    selectedCategory={selectedCategory}
+                    onCategoryChange={setSelectedCategory}
+                />
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {filteredProjects.map((project, index) => (
+                        <ProjectCard key={index} project={project} />
+                    ))}
+                </div>
+            </div>
+        </section>
     );
 };
