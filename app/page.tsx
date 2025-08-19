@@ -1,10 +1,8 @@
 "use client";
 
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, Code, Cpu, Database, Zap, Bot, Settings } from 'lucide-react';
+import { Github, Linkedin, Mail, Bot } from 'lucide-react';
 import {ProjectsSection} from "@/components/projects";
 import {AboutSection} from "@/components/about";
 
@@ -27,9 +25,6 @@ const Portfolio = () => {
               <p className="text-xl md:text-2xl text-blue-200 mb-4 max-w-3xl mx-auto">
                 Computer Systems Engineering Student at Arizona State University
               </p>
-              {/*<p className="text-lg text-teal-200 mb-8 max-w-2xl mx-auto">*/}
-              {/*  Robotics Software Developer | Systems Programming Enthusiast*/}
-              {/*</p>*/}
               <div className="flex justify-center space-x-6">
                 <Button
                     variant="outline"
