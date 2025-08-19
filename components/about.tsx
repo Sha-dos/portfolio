@@ -47,7 +47,7 @@ export const AboutSection = () => {
                             </CardHeader>
                             <CardContent className="text-gray-300">
                                 <p className="leading-relaxed">
-                                    My journey into computer systems engineering began with competitive robotics through FIRST Robotics Competition (FRC).
+                                    My journey into computer systems engineering began with robotics in elementary school, building my way up to the high school league FIRST Robotics Competition (FRC) where I served as the programming lead.
                                     Working with teams to build and program robots in eight-week challenges taught me the importance of reliable,
                                     real-time systems and efficient software design. This experience sparked my passion for systems-level programming
                                     and led me to explore languages like Rust for their performance and safety guarantees.
