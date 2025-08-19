@@ -4,7 +4,7 @@ A modern portfolio website showcasing my journey in computer systems engineering
 
 ## 🚀 Live Demo
 
-Visit the live portfolio: [nolan.peterson.vercel.app](nolan.peterson.vercel.app)
+Visit the live portfolio: [nolanpeterson.vercel.app](nolan.peterson.vercel.app)
 
 ## Built With
 
