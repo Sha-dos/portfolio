@@ -25,7 +25,7 @@ const Portfolio = () => {
               <p className="text-xl md:text-2xl text-blue-200 mb-4 max-w-3xl mx-auto">
                 Computer Systems Engineering Student at Arizona State University
               </p>
-              <div className="flex justify-center space-x-6">
+              <div className="flex justify-center space-x-2 px-4 sm:space-x-6 sm:px-0">
                 <Button
                     variant="outline"
                     size="lg"
@@ -106,3 +106,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
