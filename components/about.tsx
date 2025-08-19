@@ -64,7 +64,7 @@ export const AboutSection = () => {
                             </CardHeader>
                             <CardContent className="text-gray-300">
                                 <p className="leading-relaxed">
-                                    I'm passionate about building robust, performant systems that bridge the gap between software and hardware.
+                                    I&#39;m passionate about building robust, performant systems that bridge the gap between software and hardware.
                                     From programming robot control systems, developing embedded applications, or simulating a dice game,
                                     I love solving complex problems where reliability and efficiency are required. My goal is to contribute to the next
                                     generation of intelligent systems and autonomous technologies.
