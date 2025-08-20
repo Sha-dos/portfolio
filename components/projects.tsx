@@ -33,7 +33,7 @@ export const projectsData: Project[] = [
     {
         title: "RobotCode2023 - FRC Competition Robot",
         description: "Java-based robot code for the 2023 FRC season, featuring traditional WPILib programming patterns and command-based robot architecture.",
-        technologies: ["Java", "WPILib", "Command-Based Programming", "Autonomous Routines", "Subsystem Management"],
+        technologies: ["Java", "WPILib", "Command-Based Programming", "Autonomous Programming", "Subsystem Management"],
         status: ProjectStatus.Completed,
         link: "https://github.com/Team-2502/RobotCode2023",
         category: "Robotics"
