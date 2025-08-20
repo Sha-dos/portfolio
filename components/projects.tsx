@@ -23,6 +23,30 @@ export const projectsData: Project[] = [
         category: "Robotics"
     },
     {
+        title: "RobotCode2024 - FRC Competition Robot",
+        description: "Robot code for the 2024 FRC season built with Rust, showcasing the first year of our team's programming approach with Rust",
+        technologies: ["Rust", "FRCRS", "Autonomous Programming", "PID Control", "State Machines"],
+        status: ProjectStatus.Completed,
+        link: "https://github.com/Team-2502/RobotCode2024",
+        category: "Robotics"
+    },
+    {
+        title: "RobotCode2023 - FRC Competition Robot",
+        description: "Java-based robot code for the 2023 FRC season, featuring traditional WPILib programming patterns and command-based robot architecture.",
+        technologies: ["Java", "WPILib", "Command-Based Programming", "Autonomous Routines", "Subsystem Management"],
+        status: ProjectStatus.Completed,
+        link: "https://github.com/Team-2502/RobotCode2023",
+        category: "Robotics"
+    },
+    {
+        title: "Talon Board - Hardware Dashboard",
+        description: "A TypeScript-based dashboard application for monitoring and controlling FRC robot hardware, providing real-time telemetry and diagnostic capabilities.",
+        technologies: ["TypeScript", "Web Development", "Real-Time Data", "Hardware Monitoring", "Dashboard UI"],
+        status: ProjectStatus.Completed,
+        link: "https://github.com/Team-2502/talon-board",
+        category: "Robotics"
+    },
+    {
         title: "trajectory-rs - Path Planning Library",
         description: "A Rust library for decoding Choreo trajectory files and providing path planning capabilities for FRC robots.",
         technologies: ["Rust", "Path Planning", "Spline Generation", "Motion Profiling", "Mathematics"],
