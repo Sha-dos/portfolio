@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, Bot } from 'lucide-react';
+import { Github, Linkedin, Mail, Bot, FileText } from 'lucide-react';
 import {ProjectsSection} from "@/components/projects";
 import {AboutSection} from "@/components/about";
 
@@ -43,6 +43,15 @@ const Portfolio = () => {
                 >
                   <Linkedin className="w-5 h-5 mr-2" />
                   LinkedIn
+                </Button>
+                <Button
+                    variant="outline"
+                    size="lg"
+                    className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+                    onClick={() => window.open('/resume.pdf', '_blank')}
+                >
+                  <FileText className="w-5 h-5 mr-2" />
+                  Resume
                 </Button>
                 <Button
                     variant="outline"
@@ -93,6 +102,15 @@ const Portfolio = () => {
                   variant="ghost"
                   size="sm"
                   className="text-gray-400 hover:text-white hover:bg-white/5"
+                  onClick={() => window.open('/resume.pdf', '_blank')}
+              >
+                <FileText className="w-4 h-4 mr-2" />
+                Resume
+              </Button>
+              <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-gray-400 hover:text-white hover:bg-white/5"
                   onClick={() => window.open('mailto:peterson.nolan@icloud.com', '_blank')}
               >
                 <Mail className="w-4 h-4 mr-2" />
@@ -106,4 +124,3 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-
