@@ -95,7 +95,7 @@ const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }: {
 }) => {
     return (
         <div className="flex justify-center mb-12">
-            <div className="flex space-x-2 p-1 bg-white/10 rounded-lg backdrop-blur-sm">
+            <div className="flex space-x-2 p-1 bg-card rounded-lg shadow-sm border border-border">
                 {categories.map((category) => (
                     <Button
                         key={category}
@@ -103,8 +103,8 @@ const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }: {
                         size="sm"
                         onClick={() => onCategoryChange(category)}
                         className={selectedCategory === category
-                            ? "bg-blue-500 text-white"
-                            : "text-gray-300 hover:text-white hover:bg-white/10"
+                            ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                            : "text-muted-foreground hover:text-foreground hover:bg-accent"
                         }
                     >
                         {category}
@@ -117,27 +117,27 @@ const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }: {
 
 export const ProjectCard = ({ project }: { project: Project }) => {
     return (
-        <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group flex flex-col h-full">
+        <Card className="bg-card border-border shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col h-full">
             <CardHeader className="flex-1">
                 <div className="flex justify-between items-start">
                     <div className="flex-1">
                         <div className="flex items-center mb-2">
-                            <Badge variant="outline" className="border-teal-500/30 text-teal-200 text-xs">
+                            <Badge variant="outline" className="border-border text-muted-foreground text-xs">
                                 {project.category}
                             </Badge>
                         </div>
-                        <CardTitle className="text-white group-hover:text-blue-300 transition-colors text-lg">
+                        <CardTitle className="text-foreground group-hover:text-primary transition-colors text-lg">
                             {project.title}
                         </CardTitle>
-                        <CardDescription className="text-gray-400 mt-2 text-sm">
+                        <CardDescription className="text-muted-foreground mt-2 text-sm">
                             {project.description}
                         </CardDescription>
                     </div>
                     <Badge
                         variant={project.status === 'Completed' ? 'default' : 'secondary'}
                         className={project.status === 'Completed'
-                            ? 'bg-green-500/20 text-green-300 border-green-500/30 text-xs'
-                            : 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30 text-xs'
+                            ? 'bg-green-500/20 text-green-700 dark:text-green-300 border-green-500/30 text-xs'
+                            : 'bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 border-yellow-500/30 text-xs'
                         }
                     >
                         {project.status}
@@ -148,7 +148,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             <CardContent className="mt-auto space-y-4">
                 <div className="flex flex-wrap gap-1">
                     {project.technologies.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="border-blue-500/30 text-blue-200 text-xs">
+                        <Badge key={techIndex} variant="outline" className="border-border text-muted-foreground text-xs">
                             {tech}
                         </Badge>
                     ))}
@@ -156,7 +156,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                 <Button
                     variant="outline"
                     size="sm"
-                    className="w-full bg-white/5 border-white/20 text-white hover:bg-white/10 group"
+                    className="w-full bg-card border-border text-foreground hover:bg-accent group"
                     onClick={() => window.open(project.link, '_blank')}
                 >
                     View Project
@@ -176,12 +176,12 @@ export const ProjectsSection = () => {
         : projectsData.filter(project => project.category === selectedCategory);
 
     return (
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Projects</h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-teal-400 mx-auto rounded-full" />
-                    <p className="text-xl text-gray-300 mt-6 max-w-3xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Projects</h2>
+                    <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
+                    <p className="text-xl text-muted-foreground mt-6 max-w-3xl mx-auto">
                         From competitive robotics to systems programming, here are some projects that showcase my journey
                     </p>
                 </div>
