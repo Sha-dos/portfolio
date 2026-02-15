@@ -68,7 +68,7 @@ const Portfolio = () => {
         <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10">
           <div className="max-w-7xl mx-auto text-center">
             <p className="text-gray-400 mb-4">
-              © 2025 Nolan Peterson. Built with Next.js, TypeScript, and shadcn/ui
+              © 2026 Nolan Peterson. Built with Next.js, TypeScript, and shadcn/ui
             </p>
             <div className="flex justify-center space-x-6">
               <Button
