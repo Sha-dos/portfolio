@@ -85,6 +85,22 @@ export const projectsData: Project[] = [
         status: ProjectStatus.Completed,
         link: "https://github.com/Sha-dos/raytracer",
         category: "Software",
+    },
+    {
+        title: "SDM26 Steering Wheel Firmware",
+        description: "Embedded firmware for a Formula SAE steering wheel, with real time display, paddle shift management, and adjustable settings via potentiometers.",
+        technologies: ["Rust", "ESP32", "Embedded Systems", "CAN Bus", "Real-Time Systems", "Hardware Interface"],
+        status: ProjectStatus.InProgress,
+        link: "https://github.com/sundevilmotorsports/sdm26-steering-wheel",
+        category: "FSAE"
+    },
+    {
+        title: "ESP32 Timing Gate System",
+        description: "Mesh network timing system for Formula SAE vehicles built with ESP32 microcontrollers. Multiple gates coordinate to provide precise lap timing and telemetry data.",
+        technologies: ["C", "ESP32", "Embedded Systems", "Mesh Networking", "WiFi", "Real-Time Systems"],
+        status: ProjectStatus.InProgress,
+        link: "https://github.com/sundevilmotorsports/ESP32_Timing_Gate",
+        category: "FSAE"
     }
 ];
 
