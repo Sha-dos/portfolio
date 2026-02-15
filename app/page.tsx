@@ -93,15 +93,6 @@ const Portfolio = () => {
                   variant="ghost"
                   size="sm"
                   className="text-gray-400 hover:text-white hover:bg-white/5"
-                  onClick={() => window.open('/resume.pdf', '_blank')}
-              >
-                <FileText className="w-4 h-4 mr-2" />
-                Resume
-              </Button>
-              <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-gray-400 hover:text-white hover:bg-white/5"
                   onClick={() => window.open('mailto:peterson.nolan@icloud.com', '_blank')}
               >
                 <Mail className="w-4 h-4 mr-2" />
