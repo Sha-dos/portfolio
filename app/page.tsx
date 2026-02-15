@@ -6,6 +6,7 @@ import { Github, Linkedin, Mail, Bot, Moon, Sun } from 'lucide-react';
 import {ProjectsSection} from "@/components/projects";
 import {AboutSection} from "@/components/about";
 import { useTheme } from "@/components/theme-provider";
+import {Separator} from "@/components/ui/separator";
 
 const Portfolio = () => {
   const { theme, setTheme } = useTheme();
@@ -105,10 +106,14 @@ const Portfolio = () => {
           </div>
         </header>
 
+        <Separator />
+
         {/* About Section */}
         <div id="about">
           <AboutSection />
         </div>
+
+        <Separator />
 
         {/* Projects Section */}
         <div id="projects">
