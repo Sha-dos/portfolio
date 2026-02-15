@@ -82,7 +82,7 @@ export const projectsData: Project[] = [
         title: "Raytracer",
         description: "A basic raytracer implemented in Rust, with materials, lighting, and camera controls.",
         technologies: ["Rust", "Computer Graphics", "Math"],
-        status: ProjectStatus.InProgress,
+        status: ProjectStatus.Completed,
         link: "https://github.com/Sha-dos/raytracer",
         category: "Software",
     }
