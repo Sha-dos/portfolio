@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, Bot, Moon, Sun } from 'lucide-react';
+import { Github, Linkedin, Mail, Moon, Sun } from 'lucide-react';
+import Image from 'next/image'
 import {ProjectsSection} from "@/components/projects";
 import {AboutSection} from "@/components/about";
 import {PcbDesignsSection} from "@/components/pcb-designs";
@@ -29,9 +30,11 @@ const Portfolio = () => {
         <nav className="fixed top-0 w-full bg-card border-b border-border z-50 shadow-sm">
           <div className="relative h-16">
             <div className="absolute left-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
-              <img
+              <Image
                 src={"/me.jpg"}
                 alt={"Me"}
+                width={400}
+                height={400}
                 className="w-6 h-6 text-foreground"
               />
               <span className="text-xl font-bold text-foreground">Nolan Peterson</span>
@@ -105,9 +108,11 @@ const Portfolio = () => {
             <div className="text-center">
               <div className="mb-8">
                 <div className="w-24 h-24 bg-primary rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
-                  <img
+                  <Image
                     src={"/me.jpg"}
                     alt={"Me"}
+                    width={400}
+                    height={400}
                     className="w-24 h-24 text-primary-foreground rounded-full"
                   />
                 </div>
