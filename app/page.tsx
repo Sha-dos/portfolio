@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail, Bot, Moon, Sun } from 'lucide-react';
 import {ProjectsSection} from "@/components/projects";
 import {AboutSection} from "@/components/about";
+import {PcbDesignsSection} from "@/components/pcb-designs";
 import { useTheme } from "@/components/theme-provider";
 import {Separator} from "@/components/ui/separator";
 
@@ -44,6 +45,12 @@ const Portfolio = () => {
                     className="text-muted-foreground hover:text-foreground font-medium transition-colors"
                 >
                   Projects
+                </button>
+                <button
+                    onClick={() => scrollToSection('pcb')}
+                    className="text-muted-foreground hover:text-foreground font-medium transition-colors"
+                >
+                  PCB Designs
                 </button>
               </div>
               <div className="flex items-center space-x-3">
@@ -119,6 +126,15 @@ const Portfolio = () => {
         <div id="projects">
           <ProjectsSection />
         </div>
+
+        <Separator />
+
+        {/* PCB Designs Section */}
+        <div id="pcb">
+          <PcbDesignsSection />
+        </div>
+
+        <Separator />
 
         {/* Footer */}
         <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-border bg-card">
