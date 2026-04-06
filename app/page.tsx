@@ -27,66 +27,74 @@ const Portfolio = () => {
       <div className="min-h-screen bg-background">
         {/* Navigation Bar */}
         <nav className="fixed top-0 w-full bg-card border-b border-border z-50 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              <div className="flex items-center space-x-2">
-                <Bot className="w-6 h-6 text-foreground" />
-                <span className="text-xl font-bold text-foreground">Nolan Peterson</span>
+          <div className="relative h-16">
+            <div className="absolute left-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+              <img
+                src={"/me.jpg"}
+                alt={"Me"}
+                className="w-6 h-6 text-foreground"
+              />
+              <span className="text-xl font-bold text-foreground">Nolan Peterson</span>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+              <div className="relative h-16">
+                <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 space-x-8">
+                  <button
+                      onClick={() => scrollToSection('about')}
+                      className="text-muted-foreground hover:text-foreground font-medium transition-colors"
+                  >
+                    About
+                  </button>
+                  <button
+                      onClick={() => scrollToSection('projects')}
+                      className="text-muted-foreground hover:text-foreground font-medium transition-colors"
+                  >
+                    Projects
+                  </button>
+                  <button
+                      onClick={() => scrollToSection('pcb')}
+                      className="text-muted-foreground hover:text-foreground font-medium transition-colors"
+                  >
+                    PCB Designs
+                  </button>
+                </div>
               </div>
-              <div className="hidden md:flex space-x-8">
-                <button
-                    onClick={() => scrollToSection('about')}
-                    className="text-muted-foreground hover:text-foreground font-medium transition-colors"
-                >
-                  About
-                </button>
-                <button
-                    onClick={() => scrollToSection('projects')}
-                    className="text-muted-foreground hover:text-foreground font-medium transition-colors"
-                >
-                  Projects
-                </button>
-                <button
-                    onClick={() => scrollToSection('pcb')}
-                    className="text-muted-foreground hover:text-foreground font-medium transition-colors"
-                >
-                  PCB Designs
-                </button>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={toggleTheme}
-                    className="text-muted-foreground hover:text-foreground"
-                >
-                  {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-                </Button>
-                <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-muted-foreground hover:text-foreground"
-                    onClick={() => window.open('https://github.com/Sha-dos', '_blank')}
-                >
-                  <Github className="w-5 h-5" />
-                </Button>
-                <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-muted-foreground hover:text-foreground"
-                    onClick={() => window.open('https://linkedin.com/in/nolandpeterson', '_blank')}
-                >
-                  <Linkedin className="w-5 h-5" />
-                </Button>
-                <Button
-                    variant="default"
-                    size="sm"
-                    onClick={() => window.open('mailto:peterson.nolan@icloud.com', '_blank')}
-                >
-                  <Mail className="w-4 h-4 mr-2" />
-                  Contact
-                </Button>
-              </div>
+            </div>
+
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-3">
+              <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={toggleTheme}
+                  className="text-muted-foreground hover:text-foreground"
+              >
+                {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+              </Button>
+              <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-muted-foreground hover:text-foreground"
+                  onClick={() => window.open('https://github.com/Sha-dos', '_blank')}
+              >
+                <Github className="w-5 h-5" />
+              </Button>
+              <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-muted-foreground hover:text-foreground"
+                  onClick={() => window.open('https://linkedin.com/in/nolandpeterson', '_blank')}
+              >
+                <Linkedin className="w-5 h-5" />
+              </Button>
+              <Button
+                  variant="default"
+                  size="sm"
+                  onClick={() => window.open('mailto:peterson.nolan@icloud.com', '_blank')}
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                Contact
+              </Button>
             </div>
           </div>
         </nav>
@@ -97,7 +105,11 @@ const Portfolio = () => {
             <div className="text-center">
               <div className="mb-8">
                 <div className="w-24 h-24 bg-primary rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
-                  <Bot className="w-12 h-12 text-primary-foreground" />
+                  <img
+                    src={"/me.jpg"}
+                    alt={"Me"}
+                    className="w-24 h-24 text-primary-foreground rounded-full"
+                  />
                 </div>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 tracking-tight">
