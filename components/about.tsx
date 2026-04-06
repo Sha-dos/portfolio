@@ -17,7 +17,7 @@ const skillsData: Skill[] = [
     },
     {
         name: "Systems & Hardware",
-        items: ["Embedded Systems", "RoboRIO", "ARM Cortex", "Real-Time Systems", "CAN Bus", "IOS"],
+        items: ["Embedded Systems", "ESP32", "RoboRIO", "ARM Cortex", "Real-Time Systems", "CAN Bus", "IOS"],
         icon: <Cpu className="w-5 h-5" />
     },
     {

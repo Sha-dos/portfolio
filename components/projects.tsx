@@ -101,7 +101,31 @@ export const projectsData: Project[] = [
         status: ProjectStatus.InProgress,
         link: "https://github.com/sundevilmotorsports/ESP32_Timing_Gate",
         category: "FSAE"
-    }
+    },
+    {
+        title: "DAQ Receiver",
+        description: "ESP32-based receiver for telemetry and timing gate data, sending wireless vehicle data over ESP-IDF to a TypeScript web frontend for real-time visualization.",
+        technologies: ["C", "ESP32", "ESP-IDF", "TypeScript", "Real-Time Systems", "Telemetry"],
+        status: ProjectStatus.InProgress,
+        link: "https://github.com/sundevilmotorsports/ESP32_Receiver",
+        category: "FSAE"
+    },
+    {
+        title: "Logger",
+        description: "Data acquisition logger for Formula SAE vehicles, sampling CAN bus and ADC data to SD card at high frequency. Originally written in C, currently undergoing a full rewrite in C++ with a structured Logger class architecture for improved maintainability and extensibility.",
+        technologies: ["C", "C++", "ESP32", "ESP-IDF", "CAN Bus", "FreeRTOS", "SD Card", "Embedded Systems"],
+        status: ProjectStatus.InProgress,
+        link: "https://github.com/sundevilmotorsports/ESP32_Logger",
+        category: "FSAE"
+    },
+    {
+        title: "ModuleCore FSAE Firmware Base",
+        description: "A shared firmware foundation for all modules, providing a common C++ base with standardized module communication over CAN bus and OTA update support. Designed to run on every node in the vehicle's embedded network.",
+        technologies: ["C++", "ESP32", "ESP-IDF", "CAN Bus", "FreeRTOS", "OTA Updates", "Embedded Systems"],
+        status: ProjectStatus.InProgress,
+        link: "https://github.com/sundevilmotorsports/ModuleCore",
+        category: "FSAE"
+    },
 ];
 
 const CategoryFilter = ({ categories, selectedCategory, onCategoryChange }: {
