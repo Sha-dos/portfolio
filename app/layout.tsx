@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Nolan Peterson",
     description: "Portfolio of Nolan Peterson",
     icons: {
-        icon: "/favicon.ico",
+        icon: "/me.jpg",
     }
 };
 
