@@ -29,7 +29,11 @@ const Portfolio = () => {
         <nav className="fixed top-0 w-full bg-card border-b border-border z-50 shadow-sm">
           <div className="relative h-16">
             <div className="absolute left-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
-              <Bot className="w-6 h-6 text-foreground" />
+              <img
+                src={"/me.jpg"}
+                alt={"Me"}
+                className="w-6 h-6 text-foreground"
+              />
               <span className="text-xl font-bold text-foreground">Nolan Peterson</span>
             </div>
 
@@ -101,7 +105,11 @@ const Portfolio = () => {
             <div className="text-center">
               <div className="mb-8">
                 <div className="w-24 h-24 bg-primary rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
-                  <Bot className="w-12 h-12 text-primary-foreground" />
+                  <img
+                    src={"/me.jpg"}
+                    alt={"Me"}
+                    className="w-24 h-24 text-primary-foreground rounded-full"
+                  />
                 </div>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 tracking-tight">
