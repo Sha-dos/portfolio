@@ -98,7 +98,7 @@ export const projectsData: Project[] = [
         title: "ESP32 Timing Gate System",
         description: "Mesh network timing system for Formula SAE vehicles built with ESP32 microcontrollers. Multiple gates coordinate to provide precise lap timing and telemetry data.",
         technologies: ["C", "ESP32", "Embedded Systems", "Mesh Networking", "WiFi", "Real-Time Systems"],
-        status: ProjectStatus.InProgress,
+        status: ProjectStatus.Completed,
         link: "https://github.com/sundevilmotorsports/ESP32_Timing_Gate",
         category: "FSAE"
     },
@@ -106,7 +106,7 @@ export const projectsData: Project[] = [
         title: "DAQ Receiver",
         description: "ESP32-based receiver for telemetry and timing gate data, sending wireless vehicle data over ESP-IDF to a TypeScript web frontend for real-time visualization.",
         technologies: ["C", "ESP32", "ESP-IDF", "TypeScript", "Real-Time Systems", "Telemetry"],
-        status: ProjectStatus.InProgress,
+        status: ProjectStatus.Completed,
         link: "https://github.com/sundevilmotorsports/ESP32_Receiver",
         category: "FSAE"
     },
@@ -125,6 +125,14 @@ export const projectsData: Project[] = [
         status: ProjectStatus.InProgress,
         link: "https://github.com/sundevilmotorsports/ModuleCore",
         category: "FSAE"
+    },
+    {
+        title: "Option Strategy Visualizer",
+        description: "Interactive tool to build and visualize option strategies, compute P&L across underlying prices and time decay, and display results on an interactive graph with payoff and Greeks overlays.",
+        technologies: ["TypeScript", "React", "Options Pricing", "P&L Visualization", "Interactive Charts"],
+        status: ProjectStatus.InProgress,
+        link: "https://github.com/Sha-dos/visualize-options",
+        category: "Finance",
     },
 ];
 
